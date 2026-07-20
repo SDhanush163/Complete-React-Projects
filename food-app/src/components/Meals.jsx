@@ -1,25 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import MealItem from "./MealItem";
 
 const Meals = () => {
   const [meals, setMeals] = useState([]);
 
-  useEffect(() => {
-    const fetchMeals = async () => {
-      try {
-        const response = await fetch("http://localhost:3000/meals");
-        if (!response.ok) {
-          alert("error");
-        }
-        const mealsFromResponse = await response.json();
-        setMeals(mealsFromResponse);
-      } catch (error) {
-        console.error(error);
+  const fetchMeals = useCallback(async () => {
+    try {
+      const response = await fetch("http://localhost:3000/meals");
+      if (!response.ok) {
+        alert("error");
+        return;
       }
-    };
-
-    fetchMeals();
+      const mealsFromResponse = await response.json();
+      setMeals(mealsFromResponse);
+    } catch (error) {
+      console.error(error);
+    }
   }, []);
+
+  useEffect(() => {
+    fetchMeals();
+  }, [fetchMeals]);
 
   return (
     <ul id="meals">

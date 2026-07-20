@@ -19,7 +19,7 @@ const MealItem = ({ meal }) => {
           <p className="meal-item-description">{meal.description}</p>
         </div>
         <p className="meal-item-actions">
-          <Button onClick={handleAddMealItemToCart}>Add to Card</Button>
+          <Button onClick={handleAddMealItemToCart}>Add to Cart</Button>
         </p>
       </article>
     </li>
