@@ -1,26 +1,20 @@
 import React, { useCallback, useEffect, useState } from "react";
 import MealItem from "./MealItem";
+import useHttp from "../hooks/useHttp";
+import Error from "./UI/Error";
+
+// Preventing infinite loop
+const config = {};
 
 const Meals = () => {
-  const [meals, setMeals] = useState([]);
+  const {
+    data: meals,
+    isLoading,
+    error,
+  } = useHttp("http://localhost:3000/meals", config, []);
 
-  const fetchMeals = useCallback(async () => {
-    try {
-      const response = await fetch("http://localhost:3000/meals");
-      if (!response.ok) {
-        alert("error");
-        return;
-      }
-      const mealsFromResponse = await response.json();
-      setMeals(mealsFromResponse);
-    } catch (error) {
-      console.error(error);
-    }
-  }, []);
-
-  useEffect(() => {
-    fetchMeals();
-  }, [fetchMeals]);
+  if (isLoading) return <p className="center">Loading...</p>;
+  if (error) return <Error title="Failed to fetch meals" message={error} />;
 
   return (
     <ul id="meals">
