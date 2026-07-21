@@ -7,7 +7,9 @@ import { UserProgressProvider } from "./store/UserProgressContext";
 
 const App = () => {
   return (
+    // Provides User progress state to all child components
     <UserProgressProvider>
+      {/* Provides cart state and actions throughout the app */}
       <CartProvider>
         <Header />
         <Meals />

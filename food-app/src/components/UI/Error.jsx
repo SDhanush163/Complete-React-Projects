@@ -1,5 +1,4 @@
-import React from "react";
-
+// Displays an error message
 const Error = ({ title, message }) => {
   return (
     <div className="error">
