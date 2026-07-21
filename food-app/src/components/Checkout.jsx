@@ -17,22 +17,17 @@ const requestConfig = {
 const Checkout = () => {
   const cartCtx = useContext(CartContext);
   const userProgressCtx = useContext(UserProgressContext);
-  const {
-    data,
-    isLoading: isSending,
-    error,
-    sendRequest,
-  } = useHttp("http://localhost:3000/orders", requestConfig);
+  const { data, error, sendRequest, clearData } = useHttp(
+    "http://localhost:3000/orders",
+    requestConfig,
+  );
 
   const cartTotal = cartCtx.items.reduce(
     (totalPrice, item) => totalPrice + item.quantity * item.price,
     0,
   );
 
-  const handleClose = () => userProgressCtx.hideCheckout();
-  const handleFinish = () => {};
-
-  const submitAction = async (prev, formData) => {
+  const checkoutAction = async (prev, formData) => {
     const customerData = Object.fromEntries(formData.entries());
 
     sendRequest(
@@ -42,7 +37,18 @@ const Checkout = () => {
     );
   };
 
-  const [formState, formAction] = useActionState(submitAction, {});
+  const [formState, formAction, isPending] = useActionState(
+    checkoutAction,
+    null,
+  );
+
+  const handleClose = () => userProgressCtx.hideCheckout();
+
+  const handleFinish = () => {
+    userProgressCtx.hideCheckout();
+    cartCtx.clearCart();
+    clearData();
+  };
 
   let actions = (
     <>
@@ -53,13 +59,13 @@ const Checkout = () => {
     </>
   );
 
-  if (isSending) actions = <span>Sending order data...</span>;
+  if (isPending) actions = <span>Sending order data...</span>;
 
   if (data && !error)
     return (
       <Modal
         open={userProgressCtx.progress === "checkout"}
-        onClose={handleClose}
+        onClose={handleFinish}
       >
         <h2>Success!</h2>
         <p>Your order was submitted successfully</p>
@@ -68,7 +74,7 @@ const Checkout = () => {
           few minutes.
         </p>
         <p className="modal-actions">
-          <Button onClick={handleClose}>Okay</Button>
+          <Button onClick={handleFinish}>Okay</Button>
         </p>
       </Modal>
     );
