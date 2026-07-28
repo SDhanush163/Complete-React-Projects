@@ -44,6 +44,8 @@ Each project explores a different problem domain and introduces new architectura
 
 As I continue learning, this repository will grow with additional applications covering new technologies, libraries, and real-world development patterns.
 
+> Related Repository - If you're looking for the concept-based exercises and smaller learning projects, see **[Complete-React](https://github.com/SDhanush163/Complete-React)**.
+
 ---
 
 ## What's in this repository?
@@ -108,9 +110,7 @@ Complete-React-Projects
 - Express
 - Tailwind CSS
 
-## Related Repository
-
-If you're looking for the concept-based exercises and smaller learning projects, see **[Complete-React](https://github.com/SDhanush163/Complete-React)**.
+---
 
 <div align="center">
 
