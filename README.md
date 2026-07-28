@@ -6,12 +6,12 @@ _A collection of standalone React applications built while learning how to desig
 
 <p align="center">
 
-![GitHub last commit](https://img.shields.io/github/last-commit/SDhanush163/Complete-React-Projects?style=flat-square)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/SDhanush163/Complete-React-Projects?style=flat-square)
-![GitHub repo size](https://img.shields.io/github/repo-size/SDhanush163/Complete-React-Projects?style=flat-square)
-![GitHub top language](https://img.shields.io/github/languages/top/SDhanush163/Complete-React-Projects?style=flat-square)
-![GitHub language count](https://img.shields.io/github/languages/count/SDhanush163/Complete-React-Projects?style=flat-square)
-![License](https://img.shields.io/github/license/SDhanush163/Complete-React-Projects?style=flat-square)
+![GitHub last commit](https://img.shields.io/github/last-commit/SDhanush163/Complete-React-Projects?style=flat-square&color=2563EB)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/SDhanush163/Complete-React-Projects?style=flat-square&color=7C3AED)
+![GitHub repo size](https://img.shields.io/github/repo-size/SDhanush163/Complete-React-Projects?style=flat-square&color=EA580C)
+![GitHub top language](https://img.shields.io/github/languages/top/SDhanush163/Complete-React-Projects?style=flat-square&color=0891B2)
+![GitHub language count](https://img.shields.io/github/languages/count/SDhanush163/Complete-React-Projects?style=flat-square&color=16A34A)
+![License](https://img.shields.io/github/license/SDhanush163/Complete-React-Projects?style=flat-square&color=475569)
 
 </p>
 <br/>
