@@ -1,4 +1,4 @@
-import Header from "./Components/HEader";
+import Header from "./Components/Header";
 import Quiz from "./Components/Quiz";
 
 const App = () => {

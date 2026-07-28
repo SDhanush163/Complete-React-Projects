@@ -17,7 +17,7 @@ const Summary = ({ userAnswers }) => {
 
   return (
     <div id="summary">
-      <img src={quizCompleteImg} alt="Trophy Icon" />
+      <img src={quizCompleteImg} alt="Quiz completion trophy" />
       <h2>Quiz Completed!</h2>
       <div id="summary-stats">
         <p>

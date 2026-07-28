@@ -8,7 +8,7 @@ const sendHttpRequest = async (url, config) => {
   // Throw an error if the request fails
   if (!response.ok)
     throw new Error(
-      responseData.message || "Somethin went wrong, failed to process request",
+      responseData.message || "Something went wrong, failed to process request",
     );
 
   return responseData;

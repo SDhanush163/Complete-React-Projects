@@ -8,7 +8,7 @@ const SelectedProject = ({
   onDeleteTask,
   tasks,
 }) => {
-  const formattedDate = new Date(project.dueDate).toLocaleDateString("en-US", {
+  const formattedDate = new Date(project.dueDate).toLocaleDateString("en-GB", {
     year: "numeric",
     month: "short",
     day: "numeric",

@@ -21,7 +21,7 @@ const Header = () => {
   return (
     <header id="main-header">
       <div id="title">
-        <img src={logoImg} alt="" />
+        <img src={logoImg} alt="Food Order logo" />
         <h1>Food Order</h1>
       </div>
       <nav>
